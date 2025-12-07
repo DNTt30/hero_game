@@ -37,6 +37,7 @@ hero_game_project/
 │
 └── contract-address.txt        # Stores deployed package ID (testnet)
 
+
 📦 2. Smart Contract Overview
 
 The Move contract defines the logic for minting “Heroes”.
