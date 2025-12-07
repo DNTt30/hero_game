@@ -1,58 +1,184 @@
-Hero Game – IOTA Move Smart Contract + Frontend
+Hero Game – IOTA Move Smart Contract + Frontend DApp
 
-This project includes a Move smart contract deployed on the IOTA Testnet and a frontend DApp that interacts with the contract.
-Users can connect their wallet and mint new heroes on-chain.
+This project demonstrates a complete decentralized application (dApp) built on the IOTA Move ecosystem.
+It includes:
 
-📁 Project Structure
+A fully functional Move smart contract
+
+A Next.js + IOTA dApp Kit frontend
+
+Deployment on the IOTA Testnet
+
+Ability to mint new heroes with on-chain metadata
+
+The goal of this project is to showcase how smart contracts, UI, and wallet interaction work together in a simple blockchain game.
+
+📌 1. Project Structure
 hero_game_project/
 │
-├── contract/             # Move smart contract source code
+├── contract/                   # Move smart contract
 │   ├── Move.toml
 │   ├── Move.lock
 │   ├── sources/
-│   │   ├── hero.move     # main module
+│   │   ├── hero.move          # Main hero module
 │   │   └── contract.move
 │   └── tests/
 │       └── contract_tests.move
 │
-├── frontend/             # Next.js + IOTA dApp Kit UI
+├── frontend/                   # Next.js + IOTA dApp Kit frontend
 │   ├── app/
-│   │   ├── page.tsx
+│   │   ├── page.tsx           # Main UI page
 │   │   ├── layout.tsx
-│   │   └── globals.css
+│   │   ├── globals.css
 │   ├── public/
 │   ├── package.json
-│   └── next.config.ts
+│   ├── next.config.ts
+│   └── README.md
 │
-└── contract-address.txt  # Deployed package ID on testnet
+└── contract-address.txt        # Stores deployed package ID (testnet)
 
-🚀 Features
+📦 2. Smart Contract Overview
 
-Deploy Move smart contract on IOTA Testnet
+The Move contract defines the logic for minting “Heroes”.
+Each hero contains:
 
-Mint new heroes (name + image URL)
+name: string
 
-Display transaction digest
+image_url: string
 
-Wallet connection with IOTA dApp Kit
+Owner’s address
 
-Clean project architecture with separate backend & frontend
+Unique on-chain object ID
 
-🧪 Smart Contract Deployment (Testnet)
+The module handles:
 
-The contract has been deployed to the IOTA Testnet.
+Creating a hero object
 
-📌 Contract Address (Package ID)
-YOUR_PACKAGE_ID_HERE
+Emitting events
+
+Managing hero ownership
+
+🚀 3. Deployment (IOTA Testnet)
+
+The contract was deployed successfully to the IOTA testnet.
+
+▶ Published Package ID
+<INSERT_YOUR_PACKAGE_ID_HERE>
 
 
-(Replace with your actual testnet package ID)
+(You must paste your real package ID.)
 
-You must update the frontend file:
+▶ Update Frontend
+
+Inside:
 
 frontend/app/page.tsx
 
 
-By changing:
+Change:
 
-const PACKAGE_ID = "YOUR_PACKAGE_ID_HERE";
+const PACKAGE_ID = "<INSERT_YOUR_PACKAGE_ID_HERE>";
+
+🖥️ 4. Frontend (Next.js + IOTA dApp Kit)
+
+The frontend provides:
+
+✔ Wallet connection
+
+Supports IOTA wallet via ConnectButton.
+
+✔ Mint Hero UI
+
+User can mint a new hero by clicking a button.
+
+✔ Real transaction execution
+
+The app signs and executes the transaction using:
+
+useSignAndExecuteTransaction()
+
+✔ Displays transaction digest
+
+Users can copy/view it after minting.
+
+🧠 5. Technologies Used
+Smart Contract
+
+Move Language
+
+IOTA Move VM
+
+IOTA CLI (iota client publish)
+
+Frontend
+
+Next.js 14
+
+TypeScript
+
+TailwindCSS
+
+IOTA dApp Kit
+
+Node.js 18+
+
+🧪 6. How to Run the Project
+Backend (Move Contract)
+cd contract
+iota move build
+iota client publish --network testnet
+
+
+After publishing, copy the package ID to:
+
+contract-address.txt
+
+frontend/app/page.tsx
+
+Frontend
+cd frontend
+npm install
+npm run dev
+
+
+Open browser:
+
+http://localhost:3000
+
+
+Connect your wallet → Mint a hero → View transaction digest.
+
+📄 7. Contract Address File
+
+Located at root:
+
+contract-address.txt
+
+
+Contents:
+
+Testnet Package ID:
+<INSERT_YOUR_PACKAGE_ID_HERE>
+
+🎮 8. Features Summary
+✔ Testnet smart contract
+✔ Mint hero (name + image URL)
+✔ Display transaction digest
+✔ Clean folder structure
+✔ Full frontend + backend integration
+✔ GitHub ready for submission
+🏁 9. Conclusion
+
+This project successfully demonstrates the full workflow of a Web3 game on IOTA:
+
+Building a Move contract
+
+Deploying on testnet
+
+Connecting a wallet
+
+Executing blockchain transactions
+
+Integrating a modern frontend UI
+
+It is ready for submission as a complete blockchain development assignment.
